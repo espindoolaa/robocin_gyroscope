@@ -87,9 +87,9 @@ int main() {
     float gyro_x, gyro_y, gyro_z;
     float gyro_x_offset, gyro_y_offset, gyro_z_offset;
     float acc_x, acc_y, acc_z;
-    float acc_x_offset, acc_y_offset, acc_z_offset;
+    float acc_x_offset, acc_y_offset;
     float thetha_X_gyro, thetha_Y_gyro, thetha_Z_gyro;
-    float thetha_X_acc, thetha_Y_acc, thetha_Z_acc;
+    float thetha_X_acc, thetha_Y_acc;
     float currentRoll = 0.0, currentPitch = 0.0, currentYaw = 0.0; 
 
     const float PI = 3.1415926535;
@@ -107,7 +107,6 @@ int main() {
         // Full scale, +/-16g
         acc_x_offset += acc_x_cru / 2048.0;
         acc_y_offset += acc_y_cru / 2048.0;
-        acc_z_offset += acc_z_cru / 2048.0;
         }
     
     // Média dos valores
@@ -117,7 +116,6 @@ int main() {
 
     acc_x_offset /= frames;
     acc_y_offset /= frames;
-    acc_z_offset /= frames;
     
     while (true) {
         read_gyroscope(gyro_x_cru, gyro_y_cru, gyro_z_cru); 
@@ -130,7 +128,6 @@ int main() {
         
         acc_x = (acc_x_cru / 2048.0) - acc_x_offset; 
         acc_y = (acc_y_cru / 2048.0) - acc_y_offset;
-        acc_z = (acc_z_cru / 2048.0) - acc_z_offset;
         
         // °/s para rad/s
         gyro_x = gyro_x * (PI / 180.0);
