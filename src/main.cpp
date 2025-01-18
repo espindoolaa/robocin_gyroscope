@@ -6,6 +6,7 @@
 // Definindo os pinos I2C
 I2C i2c(PB_6, PB_7); // SDA e SCL
 
+
 // Endereço do sensor MPU-6050
 #define MPU_ADDR 0x68 << 1  
 
@@ -98,6 +99,7 @@ int main() {
     // Cálculo offset
     for (int i = 0; i < frames; i++){
         read_gyroscope(gyro_x_cru, gyro_y_cru, gyro_z_cru);
+        read_acceleration(acc_x_cru, acc_y_cru, acc_z_cru);
 
         // Full scale, +/-2000°/s
         gyro_x_offset += gyro_x_cru / 16.4;
