@@ -224,6 +224,6 @@ int main() {
             }
         }
 
-        ThisThread::sleep_for(5ms); // Intervalo de 5ms entre cada leitura 
+        ThisThread::sleep_for(5ms); // Intervalo de 5ms entre cada leitura.
     }
 }
