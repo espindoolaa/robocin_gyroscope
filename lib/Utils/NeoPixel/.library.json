@@ -1,0 +1,38 @@
+{
+    "description": "Simple neopixel (WS2812) library, tuned for stm32 (L432) at 80 MHz Should be compatible with any stm32, different clock speed may require timing adjustments in neopixel.c", 
+    "repository": {
+        "url": "https://os.mbed.com/users/MightyPork/code/NeoPixel/", 
+        "type": "hg"
+    }, 
+    "platforms": [
+        "atmelsam", 
+        "freescalekinetis", 
+        "maxim32", 
+        "nordicnrf51", 
+        "nordicnrf52", 
+        "nxplpc", 
+        "siliconlabsefm32", 
+        "ststm32", 
+        "teensy", 
+        "wiznet7500"
+    ], 
+    "frameworks": [
+        "mbed"
+    ], 
+    "version": "a81364d9a6", 
+    "authors": [
+        {
+            "url": "https://os.mbed.com/users/MightyPork/", 
+            "maintainer": false, 
+            "email": null, 
+            "name": "Ond\u0159ej Hru\u0161ka"
+        }
+    ], 
+    "keywords": [
+        "stm32", 
+        "ws2812b", 
+        "neopixel"
+    ], 
+    "id": 4280, 
+    "name": "NeoPixel"
+}
