@@ -1,6 +1,8 @@
 frames = 3676
 currentYaw = 0.0 
+gyro_threshold = 0.0021
 PI = 3.141592653589793
+
 
 def normalize_angle(angle):
     while angle > PI:
@@ -34,8 +36,9 @@ for i in range(0, 6324):
     
     # ANGULOS DO MOMENTO
     
-    currentYaw = normalize_angle(thetha_z_gyro + currentYaw)
-    erroAcumulado = odometry_theta - currentYaw
+    if abs(gyro_z) > gyro_threshold:
+        currentYaw = normalize_angle(thetha_z_gyro + currentYaw)
+        erroAcumulado = odometry_theta - currentYaw
 
     # EXIBIÇÃO DOS VALORES OBTIDOS 
     print(f"yaw_dataset = {odometry_theta} rad/s, yaw_codigo = {currentYaw} rad/s")
